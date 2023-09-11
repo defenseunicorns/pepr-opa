@@ -1,0 +1,34 @@
+{
+  "name": "pepr-opa",
+  "version": "0.0.1",
+  "description": "Open Policy Agent integration Pepr module",
+  "keywords": [
+    "pepr",
+    "k8s",
+    "policy-engine",
+    "pepr-module",
+    "security"
+  ],
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "pepr": {
+    "name": "pepr-opa",
+    "uuid": "829a3b88-2e23-556f-8ba2-0913dfa9c4a9",
+    "onError": "ignore",
+    "alwaysIgnore": {
+      "namespaces": [],
+      "labels": []
+    }
+  },
+  "scripts": {
+    "k3d-setup": "k3d cluster delete pepr-dev && k3d cluster create pepr-dev --k3s-arg '--debug@server:0'"
+  },
+  "dependencies": {
+    "@kubernetes-models/istio": "^2.3.0",
+    "pepr": "0.13.0"
+  },
+  "devDependencies": {
+    "typescript": "5.1.6"
+  }
+}
